@@ -19,13 +19,14 @@ export default async function handler(req, res) {
 
   try {
     const completion = await openai.createChatCompletion({
-      model: "gpt-4o",
+      model: "gpt-4o", // or "gpt-3.5-turbo"
       messages: [{ role: "user", content: prompt }],
     });
 
     const response = completion.data.choices[0].message.content;
     res.status(200).json({ response });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: error.message || "Something went wrong" });
   }
 }
