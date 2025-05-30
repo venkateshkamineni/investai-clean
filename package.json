@@ -1,6 +1,7 @@
 {
   "name": "investai-chat",
   "version": "1.0.0",
+  "type": "module",
   "description": "AI-powered finance tool",
   "scripts": {
     "start": "PORT=3001 react-scripts start",
